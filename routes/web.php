@@ -16,6 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/acceuil', function () {
     return view('acceuil');
 });
+
+Route::get('/ajouterClient', function () {
+    return view('AjouterClient');
+});
+
 Route::get('/users', function () {
     return view('listeUsers');
 });
