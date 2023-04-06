@@ -57,9 +57,9 @@
                 <td>{{$tache->titre}}</td>
                 <td>{{$tache->DTache}}</td>
                 <td>
-                    <a href="" class="btn  " style="background: gold">
+                    <a href="{{route("taches.Edite",$tache->id_tache)}}" class="btn  " style="background: gold">
                         <img  style="width: 20px;height: 20px" src="{{url("./images/icon/1159633.png")}}"/></a>
-                    <a href="" onclick="return confirm('are you sur you want delete this Affaire')" class=" btn" style="background: gold">
+                    <a href="{{route("taches.destroy",$tache->id_tache)}}" onclick="return confirm('are you sur you want delete this Tache')" class=" btn" style="background: gold">
                         <img  style="width: 20px;height: 20px" src="{{url("./images/icon/1345874.png")}}"/></a>
                     <a style="width: 40px;height: 40px "  href=""  style="background: gold" class="    btn  " >t      </a>
                 </td>

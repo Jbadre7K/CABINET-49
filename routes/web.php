@@ -21,7 +21,8 @@ Route::get("/Taches",[TacheController::class,"index"])->name("taches") ;
 Route::get("/ajouterTache",function (){
     return view("ajouterTache") ;
 }) ;
-
+Route::get("/Taches/destroy/{tache}",[TacheController::class,"destroy"])->name("taches.destroy") ;
+Route::get("/Taches/Modifier/{tache}",[TacheController::class,"edit"])->name("taches.Edite") ;
 
 
 /* Routes Users */

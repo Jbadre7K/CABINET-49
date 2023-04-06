@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Affaire;
 use App\Models\Tache;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TacheController extends Controller
 {
@@ -15,7 +16,8 @@ class TacheController extends Controller
      */
     public function index()
     {
-        //
+        $taches = DB::select("CALL prTaches()") ;
+        return view("taches",["taches" => $taches]) ;
     }
 
     /**
@@ -58,7 +60,9 @@ class TacheController extends Controller
      */
     public function edit(Tache $tache)
     {
-        //
+
+            return view('ModifierTache' ,['data'=> $tache,"affaires" => Affaire::all()]);
+
     }
 
     /**
@@ -81,7 +85,7 @@ class TacheController extends Controller
      */
     public function destroy(Tache $tache){
         $tache->delete();
-        return redirect()->route("affichertache")->with(['success'=>'delete  successfully']);
+        return redirect()->route("taches")->with(['success'=>'delete  successfully']);
 
     }
 
